@@ -1,5 +1,5 @@
 function Clean = WienerFilter(Signal,Noisy,Sigma)
-% Wiener Filter for denoising signals.
+%   Wiener Filter for denoising signals.
 %
 %   INPUT:
 %   Signal - Original signal
