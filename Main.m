@@ -5,7 +5,7 @@ clear all; close all; clc;
 Sig = pulse_equation();
 
 n = length(Sig);
-x = linspace(0,n,n);
+x = linspace(0,1,n);
 Sigma = 0.03*(max(Sig)-min(Sig)); % noise level
 Nos_Sig = Sig + Sigma*randn(1,n); % noisy signal
 
@@ -13,7 +13,7 @@ figure; plot(x,Sig,x,Nos_Sig); axis tight; title('Original and Noisy Signals'); 
     legend('Original Signal','SNoised Noise')
 % print('Original and Noisy Signals','-dpng')
 
-%% PREPARE FOR DENOISING
+%% DENOISING AND PLOTTING
 Clean = WienerFilter(Sig,Nos_Sig,Sigma);
 
 figure; plot(x,Sig,x,Clean); axis tight; title('Original and Denoised Signals'); ...
